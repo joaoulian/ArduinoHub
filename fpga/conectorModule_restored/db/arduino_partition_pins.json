@@ -1,0 +1,25 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "arduinoResponse[0]",
+					"strict" : false
+				},
+				{
+					"name" : "arduinoResponse[1]",
+					"strict" : false
+				},
+				{
+					"name" : "in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "in[1]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
