@@ -1,27 +1,57 @@
-const int input[4] = {0, 1, 2, 3};
+const int inputPinClient0[4] = {0, 1, 2, 3}; // address[3:2], data[1:0]
+const int outputPinClient0[4] = {24, 26};
+
+typedef struct {
+  int receiver[2];
+  int sender[2];
+  int data[2];
+  int status;
+} package;
+
+package queue[4];
+
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
-  pinMode(input[0], INPUT);
-  pinMode(input[1], INPUT);
-  pinMode(input[2], INPUT);
-  pinMode(input[3], INPUT);
 
-  analogReference(INTERNAL1V1);
-  //Se estiver usando Arduino Mega, use INTERNAL1V1
-  //se estiver usando Arduino Leonardo, remova esta linha pois o Leonardo não aceita
-  //este comando
+  /* client 0 pins setup */
+  pinMode(inputPinClient0[0], INPUT);
+  pinMode(inputPinClient0[1], INPUT);
+  pinMode(inputPinClient0[2], INPUT);
+  pinMode(inputPinClient0[3], INPUT);
+
+  pinMode(outputPinClient0[0], OUTPUT);
+  pinMode(outputPinClient0[1], OUTPUT);
+
+  analogReference(INTERNAL1V1); // setup for using analog ports
 }
 
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  Serial.print(analogRead(input[3]));
+  Serial.print(analogRead(inputPinClient0[3]));
   Serial.print(" ");
-  Serial.print(analogRead(input[2]));
+  Serial.print(analogRead(inputPinClient0[2]));
   Serial.print(" ");
-  Serial.print(analogRead(input[1]));
+  Serial.print(analogRead(inputPinClient0[1]));
   Serial.print(" ");
-  Serial.println(analogRead(input[0]));
+  Serial.println(analogRead(inputPinClient0[0]));
+
+  if (inputPinClient0[3] != 0 && inputPinClient0[2] != 0 && inputPinClient0[1] != 0 && inputPinClient0[0] != 0) {
+      queue[0].data[1] = inputPinClient0[1];
+      queue[0].data[0] = inputPinClient0[0];
+
+      queue[0].receiver[1] = inputPinClient0[3];
+      queue[0].receiver[0] = inputPinClient0[2];
+
+      queue[0].sender[1] = 0;
+      queue[0].sender[0] = 0;
+
+      queue[0].status = 1;
+  } else {
+      queue[0].status = 0;
+  }
+
+  digitalWrite(outputPinClient0[0], LOW);
+  digitalWrite(outputPinClient0[1], LOW);
+
 }
