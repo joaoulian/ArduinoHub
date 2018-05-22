@@ -1,14 +1,16 @@
 const int inputPinClient0[4] = {0, 1, 2, 3}; // address[3:2], data[1:0]
-const int outputPinClient0[4] = {24, 26};
+const int outputPinClient0[2] = {24, 26};
+const int posQueue = 0;
+
 
 typedef struct {
   int receiver[2];
   int sender[2];
   int data[2];
-  int status;
+  int status; // 0: req concluida, 1: aguardando envio, 2: enviado, aguardando confirmacao 
 } package;
 
-package queue[4];
+package queue[4]; // as posicoes representam os senders
 
 
 void setup() {
@@ -28,30 +30,56 @@ void setup() {
 
 
 void loop() {
+  /*
   Serial.print(analogRead(inputPinClient0[3]));
   Serial.print(" ");
   Serial.print(analogRead(inputPinClient0[2]));
   Serial.print(" ");
   Serial.print(analogRead(inputPinClient0[1]));
   Serial.print(" ");
-  Serial.println(analogRead(inputPinClient0[0]));
+  Serial.println(analogRead(inputPinClient0[0]));*/
 
-  if (inputPinClient0[3] != 0 && inputPinClient0[2] != 0 && inputPinClient0[1] != 0 && inputPinClient0[0] != 0) {
-      queue[0].data[1] = inputPinClient0[1];
-      queue[0].data[0] = inputPinClient0[0];
+  if (queue[posQueue].status == 0) {
+      //todo: confirmacao de recebimento
+      
+      //envio de dados
+      queue[posQueue].data[1] = inputPinClient0[1];
+      queue[posQueue].data[0] = inputPinClient0[0];
 
-      queue[0].receiver[1] = inputPinClient0[3];
-      queue[0].receiver[0] = inputPinClient0[2];
+      queue[posQueue].receiver[1] = inputPinClient0[3];
+      queue[posQueue].receiver[0] = inputPinClient0[2];
 
-      queue[0].sender[1] = 0;
-      queue[0].sender[0] = 0;
-
-      queue[0].status = 1;
-  } else {
-      queue[0].status = 0;
+      queue[posQueue].sender[1] = 0;
+      queue[posQueue].sender[0] = 0;
+      queue[posQueue].status = 1;
   }
 
-  digitalWrite(outputPinClient0[0], LOW);
-  digitalWrite(outputPinClient0[1], LOW);
+  if (queue[posQueue].status == 1) {
+    if (analogRead(queue[posQueue].data[0]) >= 800)
+      digitalWrite(outputPinClient0[0], HIGH);
+    else
+      digitalWrite(outputPinClient0[0], LOW);
+    if (analogRead(queue[posQueue].data[1]) >= 800)
+      digitalWrite(outputPinClient0[1], HIGH);
+    else
+      digitalWrite(outputPinClient0[1], LOW);
+      
+    queue[posQueue].status = 2;
+  }
+
+  if (queue[posQueue].status == 2) {
+    if (inputPinClient0[1] == queue[posQueue].data[1] && inputPinClient0[0] == queue[posQueue].data[0]){
+      Serial.print(" ");
+      Serial.print(analogRead(inputPinClient0[0]));
+      Serial.print(" ");
+      Serial.println(analogRead(inputPinClient0[1]));
+      queue[posQueue].status = 0;
+      //posQueue++;
+    }
+  }
+  
+  
+
+
 
 }
