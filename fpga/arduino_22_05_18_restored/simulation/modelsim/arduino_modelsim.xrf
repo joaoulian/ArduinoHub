@@ -1,0 +1,17 @@
+vendor_name = ModelSim
+source_file = 1, /home-local/aluno/Documentos/ArduinoHub/fpga/arduino_22_05_18_restored/Arduino/arduino.v
+source_file = 1, /home-local/aluno/Documentos/ArduinoHub/fpga/arduino_22_05_18_restored/Arduino/Waveform.vwf
+source_file = 1, /home-local/aluno/Documentos/ArduinoHub/fpga/arduino_22_05_18_restored/db/arduino.cbx.xml
+design_name = arduino
+instance = comp, \out[0]~output , out[0]~output, arduino, 1
+instance = comp, \out[1]~output , out[1]~output, arduino, 1
+instance = comp, \out[2]~output , out[2]~output, arduino, 1
+instance = comp, \out[3]~output , out[3]~output, arduino, 1
+instance = comp, \arduinoResponse[0]~output , arduinoResponse[0]~output, arduino, 1
+instance = comp, \arduinoResponse[1]~output , arduinoResponse[1]~output, arduino, 1
+instance = comp, \in[0]~input , in[0]~input, arduino, 1
+instance = comp, \in[1]~input , in[1]~input, arduino, 1
+design_name = hard_block
+instance = comp, \~ALTERA_ASDO_DATA1~~ibuf , ~ALTERA_ASDO_DATA1~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_FLASH_nCE_nCSO~~ibuf , ~ALTERA_FLASH_nCE_nCSO~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_DATA0~~ibuf , ~ALTERA_DATA0~~ibuf, hard_block, 1
