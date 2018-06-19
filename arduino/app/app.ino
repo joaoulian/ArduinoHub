@@ -1,85 +1,36 @@
-const int inputPinClient0[4] = {0, 1, 2, 3}; // address[3:2], data[1:0]
-const int outputPinClient0[2] = {24, 26};
-const int posQueue = 0;
-
-
-typedef struct {
-  int receiver[2];
-  int sender[2];
-  int data[2];
-  int status; // 0: req concluida, 1: aguardando envio, 2: enviado, aguardando confirmacao 
-} package;
-
-package queue[4]; // as posicoes representam os senders
-
+const int inputPlaca0[4] = {0, 1, 2, 3}; //endereco(mais significativo) endereco dado(mais significativo) dado
+// o input mostra o dado que 
+const int outputPlaca0[4] = {24, 26};
 
 void setup() {
+  // put your setup code here, to run once:
   Serial.begin(9600);
+  pinMode(inputPlaca0[0], INPUT);
+  pinMode(inputPlaca0[1], INPUT);
+  pinMode(inputPlaca0[2], INPUT);
+  pinMode(inputPlaca0[3], INPUT);
 
-  /* client 0 pins setup */
-  pinMode(inputPinClient0[0], INPUT);
-  pinMode(inputPinClient0[1], INPUT);
-  pinMode(inputPinClient0[2], INPUT);
-  pinMode(inputPinClient0[3], INPUT);
-
-  pinMode(outputPinClient0[0], OUTPUT);
-  pinMode(outputPinClient0[1], OUTPUT);
-
-  analogReference(INTERNAL1V1); // setup for using analog ports
+  pinMode(outputPlaca0[0], OUTPUT);
+  pinMode(outputPlaca0[1], OUTPUT);
+  
+  analogReference(INTERNAL1V1);
+  //Se estiver usando Arduino Mega, use INTERNAL1V1
+  //se estiver usando Arduino Leonardo, remova esta linha pois o Leonardo não aceita
+  //este comando
 }
 
 
 void loop() {
-  /*
-  Serial.print(analogRead(inputPinClient0[3]));
+  // put your main code here, to run repeatedly:
+  Serial.print(analogRead(inputPlaca0[3]));
   Serial.print(" ");
-  Serial.print(analogRead(inputPinClient0[2]));
+  Serial.print(analogRead(inputPlaca0[2]));
   Serial.print(" ");
-  Serial.print(analogRead(inputPinClient0[1]));
+  Serial.print(analogRead(inputPlaca0[1]));
   Serial.print(" ");
-  Serial.println(analogRead(inputPinClient0[0]));*/
+  Serial.println(analogRead(inputPlaca0[0]));
 
-  if (queue[posQueue].status == 0) {
-      //todo: confirmacao de recebimento
-      
-      //envio de dados
-      queue[posQueue].data[1] = inputPinClient0[1];
-      queue[posQueue].data[0] = inputPinClient0[0];
-
-      queue[posQueue].receiver[1] = inputPinClient0[3];
-      queue[posQueue].receiver[0] = inputPinClient0[2];
-
-      queue[posQueue].sender[1] = 0;
-      queue[posQueue].sender[0] = 0;
-      queue[posQueue].status = 1;
-  }
-
-  if (queue[posQueue].status == 1) {
-    if (analogRead(queue[posQueue].data[0]) >= 800)
-      digitalWrite(outputPinClient0[0], HIGH);
-    else
-      digitalWrite(outputPinClient0[0], LOW);
-    if (analogRead(queue[posQueue].data[1]) >= 800)
-      digitalWrite(outputPinClient0[1], HIGH);
-    else
-      digitalWrite(outputPinClient0[1], LOW);
-      
-    queue[posQueue].status = 2;
-  }
-
-  if (queue[posQueue].status == 2) {
-    if (inputPinClient0[1] == queue[posQueue].data[1] && inputPinClient0[0] == queue[posQueue].data[0]){
-      Serial.print(" ");
-      Serial.print(analogRead(inputPinClient0[0]));
-      Serial.print(" ");
-      Serial.println(analogRead(inputPinClient0[1]));
-      queue[posQueue].status = 0;
-      //posQueue++;
-    }
-  }
+  digitalWrite(outputPlaca0[0], LOW);
+  digitalWrite(outputPlaca0[1], LOW);
   
-  
-
-
-
 }
