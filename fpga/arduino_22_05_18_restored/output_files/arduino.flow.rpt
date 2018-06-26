@@ -1,5 +1,5 @@
 Flow report for arduino
-Tue Jun  5 17:06:01 2018
+Tue Jun 26 16:38:43 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Tue Jun  5 17:06:01 2018           ;
+; Flow Status                        ; Successful - Tue Jun 26 16:38:43 2018           ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Standard Edition ;
 ; Revision Name                      ; arduino                                         ;
 ; Top-level Entity Name              ; arduino                                         ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/05/2018 17:05:27 ;
+; Start date & time ; 06/26/2018 16:38:03 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; arduino             ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 255332401455866.152822912710934        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 255332401448543.153004188316864        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -94,12 +94,12 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:11     ; 1.0                     ; 882 MB              ; 00:00:27                           ;
-; Fitter                    ; 00:00:10     ; 1.0                     ; 1693 MB             ; 00:00:14                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 818 MB              ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 906 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 1047 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:29     ; --                      ; --                  ; 00:00:48                           ;
+; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 881 MB              ; 00:00:27                           ;
+; Fitter                    ; 00:00:13     ; 1.0                     ; 1698 MB             ; 00:00:14                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 818 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 905 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1049 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:32     ; --                      ; --                  ; 00:00:48                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -108,11 +108,11 @@ refer to the applicable agreement for further details.
 +---------------------------+------------------+------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; D132591          ; Linux Mint ; 18         ; x86_64         ;
-; Fitter                    ; D132591          ; Linux Mint ; 18         ; x86_64         ;
-; Assembler                 ; D132591          ; Linux Mint ; 18         ; x86_64         ;
-; TimeQuest Timing Analyzer ; D132591          ; Linux Mint ; 18         ; x86_64         ;
-; EDA Netlist Writer        ; D132591          ; Linux Mint ; 18         ; x86_64         ;
+; Analysis & Synthesis      ; D132615          ; Linux Mint ; 18         ; x86_64         ;
+; Fitter                    ; D132615          ; Linux Mint ; 18         ; x86_64         ;
+; Assembler                 ; D132615          ; Linux Mint ; 18         ; x86_64         ;
+; TimeQuest Timing Analyzer ; D132615          ; Linux Mint ; 18         ; x86_64         ;
+; EDA Netlist Writer        ; D132615          ; Linux Mint ; 18         ; x86_64         ;
 +---------------------------+------------------+------------+------------+----------------+
 
 

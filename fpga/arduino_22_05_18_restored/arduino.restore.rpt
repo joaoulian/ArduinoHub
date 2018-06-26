@@ -1,5 +1,5 @@
 Restore Archived Project report for arduino
-Tue Jun  5 17:03:49 2018
+Tue Jun 26 16:29:52 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; Restore Archived Project Summary                                        ;
 +---------------------------------+---------------------------------------+
-; Restore Archived Project Status ; Successful - Tue Jun  5 17:03:49 2018 ;
+; Restore Archived Project Status ; Successful - Tue Jun 26 16:29:52 2018 ;
 ; Revision Name                   ; arduino                               ;
 ; Top-level Entity Name           ; arduino                               ;
 ; Family                          ; Cyclone IV E                          ;
@@ -50,8 +50,8 @@ Info: Successfully restored '/home-local/aluno/Documentos/ArduinoHub/fpga/arduin
 Info: Generated report 'arduino.restore.rpt'
 Info (23030): Evaluation of Tcl script /opt/intelFPGA/17.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 1042 megabytes
-    Info: Processing ended: Tue Jun  5 17:03:49 2018
+    Info: Peak virtual memory: 1045 megabytes
+    Info: Processing ended: Tue Jun 26 16:29:52 2018
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 

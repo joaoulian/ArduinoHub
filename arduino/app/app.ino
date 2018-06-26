@@ -13,6 +13,8 @@ const int outputPinClient3[2] = {13, 12};
 
 const int posQueue = 0;
 
+int contador = 0;
+
 
 typedef struct {
   int receiver[2]; //quem vai receber
@@ -52,15 +54,26 @@ void setup() {
   pinMode(outputPinClient3[1], OUTPUT);
 
   analogReference(INTERNAL1V1); // setup for using analog ports
+  queue[posQueue].status = 0;
 }
 
 
 void loop() {
-  queue[posQueue].status = 0;
+
+  if (queue[posQueue].status < 5){
+    Serial.print(analogRead(inputPinClient1[3])); //endereco
+    Serial.print(" ");
+    Serial.print(analogRead(inputPinClient1[2])); //endereco
+    Serial.print(" ");
+    Serial.print(analogRead(inputPinClient1[1])); //dado
+    Serial.print(" ");
+    Serial.println(analogRead(inputPinClient1[0])); //dado
+  }
+  
   //Serial.println(queue[posQueue].status);
   if (queue[posQueue].status == 0) {
       
-      
+      contador = 0;
       // pegando o dado e colocando na fila para enviar
       //verificar se algum dado está sendo enviado
 
@@ -69,78 +82,27 @@ void loop() {
       int data0, data1, receiver0, receiver1, sender0, sender1;
       int inputReceiver;
       
+      int numConverted = convertNumber(analogRead(inputPinClient1[2]),analogRead(inputPinClient1[3]));
 
-      if(convertNumber(inputPinClient1[0],inputPinClient1[1]) != 0){
+      if((numConverted != 0) && (numConverted != 1)){
         Serial.println("PLACA 1 ENVIANDO DADO");
+        
         //a placa 1 está enviando um dado
         isSender = 1;
-        data0 = inputPinClient1[0];
-        data1 = inputPinClient1[1];
-        receiver0 = inputPinClient1[2];
-        receiver1 = inputPinClient1[3];
-        sender0 = 0;
-        sender1 = 1;
-
-
-        //fazendo a placa parar de enviar dado
-        digitalWrite(outputPinClient1[0], LOW);
-        digitalWrite(outputPinClient1[1], HIGH);
-        /*
-        while(convertNumber(inputPinClient1[2],inputPinClient1[3]) != 1){
-          
-        }
-        */
-        
-      }
-
-     
-     Serial.println(convertNumber(inputPinClient2[0],inputPinClient2[1]));
-      else if(convertNumber(inputPinClient2[0],inputPinClient2[1]) != 0){
-        Serial.println("PLACA 2 ENVIANDO DADO");
-        //a placa 2 está enviando um dado
-        isSender = 1;
-        data0 = inputPinClient2[0];
-        data1 = inputPinClient2[1];
-        receiver0 = inputPinClient2[2];
-        receiver1 = inputPinClient2[3];
+        data0 = analogRead(inputPinClient1[0]);
+        data1 = analogRead(inputPinClient1[1]);
+        receiver0 = analogRead(inputPinClient1[2]);
+        receiver1 = analogRead(inputPinClient1[3]);
         sender0 = 1;
         sender1 = 0;
 
         //fazendo a placa parar de enviar dado
-        digitalWrite(outputPinClient2[0], HIGH);
-        digitalWrite(outputPinClient2[1], LOW);
-        /*
-        while(convertNumber(inputPinClient2[2],inputPinClient2[3]) != 2){
-        }
-        */
+        digitalWrite(outputPinClient1[0], HIGH);
+        digitalWrite(outputPinClient1[1], LOW);
       }
-
-      else if(convertNumber(inputPinClient3[0],inputPinClient3[1]) != 0){
-        //a placa 3 está enviando um dado
-        isSender = 1;
-        data0 = inputPinClient3[0];
-        data1 = inputPinClient3[1];
-        receiver0 = inputPinClient3[2];
-        receiver1 = inputPinClient3[3];
-        sender0 = 1;
-        sender1 = 1;
-
-
-        //fazendo a placa parar de enviar dado
-        digitalWrite(outputPinClient3[0], HIGH);
-        digitalWrite(outputPinClient3[1], HIGH);
-        /*
-        while(convertNumber(inputPinClient3[2],inputPinClient3[3]) != 3){
-        }
-        */
-      }
-
-      
-      
       
 
       if(isSender == 1){
-        
         //envio de dados
         queue[posQueue].data[0] = data0;
         queue[posQueue].data[1] = data1;
@@ -151,7 +113,7 @@ void loop() {
 
         queue[posQueue].sender[0] = sender0;
         queue[posQueue].sender[1] = sender1;
-  
+        
         //alterando o status da fila
         queue[posQueue].status = 1;
       }
@@ -160,16 +122,15 @@ void loop() {
   }
 
   if (queue[posQueue].status == 1) { //enviando o dado
+    Serial.println("- STATUS ENVIANDO O DADO");
     int addressNumber = convertNumber(queue[posQueue].receiver[0], queue[posQueue].receiver[1]);
     int auxOutput0 = outputPinClient1[0];
     int auxOutput1 = outputPinClient1[1];
+    
     if(addressNumber == 2){
+      Serial.println("RECEBENDO NA PLACA 2");
       auxOutput0 = outputPinClient2[0];
       auxOutput1 = outputPinClient2[1];
-    }
-    else if(addressNumber == 3){
-      auxOutput0 = outputPinClient3[0];
-      auxOutput1 = outputPinClient3[1];
     }
 
     //logica para enviar o dado
@@ -187,15 +148,37 @@ void loop() {
 
   if (queue[posQueue].status == 2) {
     //todo: confirmacao de recebimento
+    Serial.println("- STATUS CONFIRMANDO RECEBIMENTO");
+    //queue[posQueue].status = 8;
+    Serial.println("- PLACA QUE ESTA RECEBENDO: ");
+    Serial.println(convertNumber(queue[posQueue].receiver[0], queue[posQueue].receiver[1]));
 
-    
-    if (inputPinClient1[1] == queue[posQueue].data[1] && inputPinClient1[0] == queue[posQueue].data[0]){
-      queue[posQueue].status = 0;
-      //posQueue++;
+    if(contador >= 5){
+        queue[posQueue].status = 1;
+        contador = 0;
     }
+      
+    if(convertNumber(queue[posQueue].receiver[0], queue[posQueue].receiver[1]) == 2){
+      
+      if(convertNumber(analogRead(inputPinClient2[2]),analogRead(inputPinClient2[3])) == 2){
+        resetStatus();
+      } 
+    }
+    contador++;
   }
   
-  
+}
+
+void resetStatus(){
+  queue[posQueue].status = 0;
+  digitalWrite(outputPinClient1[0], LOW);
+  digitalWrite(outputPinClient1[1], LOW);
+
+  digitalWrite(outputPinClient2[0], LOW);
+  digitalWrite(outputPinClient2[1], LOW);
+
+  digitalWrite(outputPinClient3[0], LOW);
+  digitalWrite(outputPinClient3[1], LOW);
 }
 
 /*
