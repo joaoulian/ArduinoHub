@@ -1,7 +1,0 @@
-|arduino
-out[0] << <VCC>
-out[1] << <VCC>
-out[2] << <VCC>
-out[3] << <GND>
-
-
