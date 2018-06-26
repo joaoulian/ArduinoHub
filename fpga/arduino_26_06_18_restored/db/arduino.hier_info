@@ -1,0 +1,47 @@
+|arduino
+out[0] << out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] << out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] << out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] << out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+in[0] => reg_data.DATAB
+in[0] => Equal0.IN1
+in[1] => reg_data.DATAB
+in[1] => Equal0.IN0
+arduinoResponse[0] << arduinoResponse[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+arduinoResponse[1] << arduinoResponse[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+btnClock => reg_end.DATAA
+btnClock => reg_data.DATAA
+clock50 => clock50.IN1
+
+
+|arduino|temporizador:t
+clockin => count[0].CLK
+clockin => count[1].CLK
+clockin => count[2].CLK
+clockin => count[3].CLK
+clockin => count[4].CLK
+clockin => count[5].CLK
+clockin => count[6].CLK
+clockin => count[7].CLK
+clockin => count[8].CLK
+clockin => count[9].CLK
+clockin => count[10].CLK
+clockin => count[11].CLK
+clockin => count[12].CLK
+clockin => count[13].CLK
+clockin => count[14].CLK
+clockin => count[15].CLK
+clockin => count[16].CLK
+clockin => count[17].CLK
+clockin => count[18].CLK
+clockin => count[19].CLK
+clockin => count[20].CLK
+clockin => count[21].CLK
+clockin => count[22].CLK
+clockin => count[23].CLK
+clockin => count[24].CLK
+clockin => count[25].CLK
+clockin => count[26].CLK
+clockout <= count[26].DB_MAX_OUTPUT_PORT_TYPE
+
+

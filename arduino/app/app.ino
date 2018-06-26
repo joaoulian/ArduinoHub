@@ -60,14 +60,8 @@ void setup() {
 
 void loop() {
 
-  if (queue[posQueue].status < 5){
-    Serial.print(analogRead(inputPinClient1[3])); //endereco
-    Serial.print(" ");
-    Serial.print(analogRead(inputPinClient1[2])); //endereco
-    Serial.print(" ");
-    Serial.print(analogRead(inputPinClient1[1])); //dado
-    Serial.print(" ");
-    Serial.println(analogRead(inputPinClient1[0])); //dado
+  if (queue[posQueue].status == 2){
+    
   }
   
   //Serial.println(queue[posQueue].status);
@@ -149,9 +143,8 @@ void loop() {
   if (queue[posQueue].status == 2) {
     //todo: confirmacao de recebimento
     Serial.println("- STATUS CONFIRMANDO RECEBIMENTO");
-    //queue[posQueue].status = 8;
-    Serial.println("- PLACA QUE ESTA RECEBENDO: ");
-    Serial.println(convertNumber(queue[posQueue].receiver[0], queue[posQueue].receiver[1]));
+    //Serial.println("- PLACA QUE ESTA RECEBENDO: ");
+    //Serial.println(convertNumber(queue[posQueue].receiver[0], queue[posQueue].receiver[1]));
 
     if(contador >= 5){
         queue[posQueue].status = 1;
@@ -159,8 +152,17 @@ void loop() {
     }
       
     if(convertNumber(queue[posQueue].receiver[0], queue[posQueue].receiver[1]) == 2){
-      
+      Serial.println("ESPERANDO VIR 2");
+      Serial.println(convertNumber(analogRead(inputPinClient2[2]),analogRead(inputPinClient2[3])));
       if(convertNumber(analogRead(inputPinClient2[2]),analogRead(inputPinClient2[3])) == 2){
+        /*Serial.print(analogRead(inputPinClient2[3])); //endereco
+        Serial.print(" ");
+        Serial.print(analogRead(inputPinClient2[2])); //endereco
+        Serial.print(" ");
+        Serial.print(analogRead(inputPinClient2[1])); //dado
+        Serial.print(" ");
+        Serial.println(analogRead(inputPinClient2[0])); //dado
+        */
         resetStatus();
       } 
     }
@@ -170,6 +172,7 @@ void loop() {
 }
 
 void resetStatus(){
+  
   queue[posQueue].status = 0;
   digitalWrite(outputPinClient1[0], LOW);
   digitalWrite(outputPinClient1[1], LOW);
