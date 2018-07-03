@@ -3,15 +3,22 @@ out[0] << out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out[1] << out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out[2] << out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out[3] << out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+in[0] => arduinoResponse.DATAB
 in[0] => reg_data.DATAB
 in[0] => Equal0.IN1
+in[1] => arduinoResponse.DATAB
 in[1] => reg_data.DATAB
 in[1] => Equal0.IN0
 arduinoResponse[0] << arduinoResponse[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 arduinoResponse[1] << arduinoResponse[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 btnClock => reg_end.DATAA
 btnClock => reg_data.DATAA
+btnClock => reg_data.DATAA
 clock50 => clock50.IN1
+responseDisplay[0] << responseDisplay[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+responseDisplay[1] << responseDisplay[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+responseDisplay[2] << responseDisplay[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+responseDisplay[3] << responseDisplay[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |arduino|temporizador:t

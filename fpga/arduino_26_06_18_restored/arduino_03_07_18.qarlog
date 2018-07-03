@@ -1,0 +1,17 @@
+Quartus Prime Archive log --	C:/Users/victo/Desktop/ArduinoHub-master/fpga/arduino_26_06_18_restored/arduino_03_07_18.qarlog
+
+Archive:	C:/Users/victo/Desktop/ArduinoHub-master/fpga/arduino_26_06_18_restored/arduino_03_07_18.qar
+Date:		Tue Jul 03 18:36:08 2018
+Quartus Prime		17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/victo/Desktop/ArduinoHub-master/fpga/arduino_26_06_18_restored/Arduino/Waveform.vwf
+C:/Users/victo/Desktop/ArduinoHub-master/fpga/arduino_26_06_18_restored/Arduino/arduino.v
+C:/Users/victo/Desktop/ArduinoHub-master/fpga/arduino_26_06_18_restored/arduino.qpf
+C:/Users/victo/Desktop/ArduinoHub-master/fpga/arduino_26_06_18_restored/arduino.qsf
+C:/Users/victo/Desktop/ArduinoHub-master/fpga/arduino_26_06_18_restored/assignment_defaults.qdf
+C:/Users/victo/Desktop/ArduinoHub-master/fpga/arduino_26_06_18_restored/temporizador.v
+	======= Total: 6 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

@@ -12,6 +12,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "out[2]",
+					"strict" : false
+				},
+				{
 					"name" : "out[3]",
 					"strict" : false
 				},
@@ -24,11 +28,23 @@
 					"strict" : false
 				},
 				{
-					"name" : "in[0]",
+					"name" : "responseDisplay[0]",
 					"strict" : false
 				},
 				{
-					"name" : "clock50",
+					"name" : "responseDisplay[1]",
+					"strict" : false
+				},
+				{
+					"name" : "responseDisplay[2]",
+					"strict" : false
+				},
+				{
+					"name" : "responseDisplay[3]",
+					"strict" : false
+				},
+				{
+					"name" : "in[0]",
 					"strict" : false
 				},
 				{
@@ -37,6 +53,10 @@
 				},
 				{
 					"name" : "btnClock",
+					"strict" : false
+				},
+				{
+					"name" : "clock50",
 					"strict" : false
 				}
 			]

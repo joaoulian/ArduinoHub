@@ -1,6 +1,6 @@
 Analysis & Synthesis report for arduino
-Tue Jun 26 17:46:19 2018
-Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
+Tue Jul 03 18:27:16 2018
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
 ---------------------
@@ -13,14 +13,12 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |arduino
- 12. Parameter Settings for User Entity Instance: temporizador:t
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |arduino
+ 10. Parameter Settings for User Entity Instance: temporizador:t
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -43,24 +41,24 @@ refer to the applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 26 17:46:19 2018           ;
-; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Standard Edition ;
-; Revision Name                      ; arduino                                         ;
-; Top-level Entity Name              ; arduino                                         ;
-; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 35                                              ;
-;     Total combinational functions  ; 29                                              ;
-;     Dedicated logic registers      ; 35                                              ;
-; Total registers                    ; 35                                              ;
-; Total pins                         ; 10                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
-+------------------------------------+-------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jul 03 18:27:16 2018       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; arduino                                     ;
+; Top-level Entity Name              ; arduino                                     ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 41                                          ;
+;     Total combinational functions  ; 31                                          ;
+;     Dedicated logic registers      ; 41                                          ;
+; Total registers                    ; 41                                          ;
+; Total pins                         ; 14                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -155,25 +153,25 @@ refer to the applicable agreement for further details.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                           ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                             ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
-; Arduino/arduino.v                ; yes             ; User Verilog HDL File  ; /home-local/aluno/Documentos/ArduinoHub/fpga/arduino_26_06_18_restored/Arduino/arduino.v ;         ;
-; temporizador.v                   ; yes             ; User Verilog HDL File  ; /home-local/aluno/Documentos/ArduinoHub/fpga/arduino_26_06_18_restored/temporizador.v    ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                            ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                              ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------+---------+
+; Arduino/arduino.v                ; yes             ; User Verilog HDL File  ; C:/Users/victo/Desktop/ArduinoHub-master/fpga/arduino_26_06_18_restored/Arduino/arduino.v ;         ;
+; temporizador.v                   ; yes             ; User Verilog HDL File  ; C:/Users/victo/Desktop/ArduinoHub-master/fpga/arduino_26_06_18_restored/temporizador.v    ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------+
@@ -181,30 +179,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------+
 ; Resource                                    ; Usage         ;
 +---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 35            ;
+; Estimated Total logic elements              ; 41            ;
 ;                                             ;               ;
-; Total combinational functions               ; 29            ;
+; Total combinational functions               ; 31            ;
 ; Logic element usage by number of LUT inputs ;               ;
 ;     -- 4 input functions                    ; 0             ;
-;     -- 3 input functions                    ; 3             ;
-;     -- <=2 input functions                  ; 26            ;
+;     -- 3 input functions                    ; 4             ;
+;     -- <=2 input functions                  ; 27            ;
 ;                                             ;               ;
 ; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 4             ;
+;     -- normal mode                          ; 6             ;
 ;     -- arithmetic mode                      ; 25            ;
 ;                                             ;               ;
-; Total registers                             ; 35            ;
-;     -- Dedicated logic registers            ; 35            ;
+; Total registers                             ; 41            ;
+;     -- Dedicated logic registers            ; 41            ;
 ;     -- I/O registers                        ; 0             ;
 ;                                             ;               ;
-; I/O pins                                    ; 10            ;
+; I/O pins                                    ; 14            ;
 ;                                             ;               ;
 ; Embedded Multiplier 9-bit elements          ; 0             ;
 ;                                             ;               ;
 ; Maximum fan-out node                        ; clock50~input ;
 ; Maximum fan-out                             ; 27            ;
-; Total fan-out                               ; 144           ;
-; Average fan-out                             ; 1.71          ;
+; Total fan-out                               ; 170           ;
+; Average fan-out                             ; 1.70          ;
 +---------------------------------------------+---------------+
 
 
@@ -213,31 +211,10 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Entity Name  ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+--------------+
-; |arduino                   ; 29 (2)              ; 35 (8)                    ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |arduino                ; arduino      ; work         ;
+; |arduino                   ; 31 (4)              ; 41 (14)                   ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |arduino                ; arduino      ; work         ;
 ;    |temporizador:t|        ; 27 (27)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arduino|temporizador:t ; temporizador ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; reg_end[0]                            ; Stuck at GND due to stuck port data_in ;
-; out[2]~reg0                           ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 2 ;                                        ;
-+---------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                        ;
-+---------------+---------------------------+----------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
-+---------------+---------------------------+----------------------------------------+
-; reg_end[0]    ; Stuck at GND              ; out[2]~reg0                            ;
-;               ; due to stuck port data_in ;                                        ;
-+---------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -245,7 +222,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 35    ;
+; Total registers                              ; 41    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -260,7 +237,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+------------------------------------------------+
 ; Parameter Name ; Value ; Type                                           ;
 +----------------+-------+------------------------------------------------+
-; myNumber       ; 2     ; Signed Integer                                 ;
+; myNumber       ; 1     ; Signed Integer                                 ;
 +----------------+-------+------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -280,20 +257,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 10                          ;
-; cycloneiii_ff         ; 35                          ;
-;     plain             ; 35                          ;
-; cycloneiii_lcell_comb ; 30                          ;
+; boundary_port         ; 14                          ;
+; cycloneiii_ff         ; 41                          ;
+;     plain             ; 41                          ;
+; cycloneiii_lcell_comb ; 31                          ;
 ;     arith             ; 25                          ;
 ;         2 data inputs ; 24                          ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 5                           ;
-;         0 data inputs ; 1                           ;
+;     normal            ; 6                           ;
 ;         1 data inputs ; 2                           ;
-;         3 data inputs ; 2                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 3                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.50                        ;
-; Average LUT depth     ; 2.28                        ;
+; Average LUT depth     ; 2.14                        ;
 +-----------------------+-----------------------------+
 
 
@@ -311,31 +288,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
-    Info: Processing started: Tue Jun 26 17:46:07 2018
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Tue Jul 03 18:27:00 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off arduino -c arduino
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file Arduino/arduino.v
-    Info (12023): Found entity 1: arduino File: /home-local/aluno/Documentos/ArduinoHub/fpga/arduino_26_06_18_restored/Arduino/arduino.v Line: 1
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file arduino/arduino.v
+    Info (12023): Found entity 1: arduino File: C:/Users/victo/Desktop/ArduinoHub-master/fpga/arduino_26_06_18_restored/Arduino/arduino.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file temporizador.v
-    Info (12023): Found entity 1: temporizador File: /home-local/aluno/Documentos/ArduinoHub/fpga/arduino_26_06_18_restored/temporizador.v Line: 1
+    Info (12023): Found entity 1: temporizador File: C:/Users/victo/Desktop/ArduinoHub-master/fpga/arduino_26_06_18_restored/temporizador.v Line: 1
 Info (12127): Elaborating entity "arduino" for the top level hierarchy
-Info (12128): Elaborating entity "temporizador" for hierarchy "temporizador:t" File: /home-local/aluno/Documentos/ArduinoHub/fpga/arduino_26_06_18_restored/Arduino/arduino.v Line: 21
-Warning (10230): Verilog HDL assignment warning at temporizador.v(11): truncated value with size 32 to match size of target (27) File: /home-local/aluno/Documentos/ArduinoHub/fpga/arduino_26_06_18_restored/temporizador.v Line: 11
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "out[2]" is stuck at GND File: /home-local/aluno/Documentos/ArduinoHub/fpga/arduino_26_06_18_restored/Arduino/arduino.v Line: 23
+Info (12128): Elaborating entity "temporizador" for hierarchy "temporizador:t" File: C:/Users/victo/Desktop/ArduinoHub-master/fpga/arduino_26_06_18_restored/Arduino/arduino.v Line: 23
+Warning (10230): Verilog HDL assignment warning at temporizador.v(11): truncated value with size 32 to match size of target (27) File: C:/Users/victo/Desktop/ArduinoHub-master/fpga/arduino_26_06_18_restored/temporizador.v Line: 11
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 45 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 55 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 35 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 975 megabytes
-    Info: Processing ended: Tue Jun 26 17:46:19 2018
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:26
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 41 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4758 megabytes
+    Info: Processing ended: Tue Jul 03 18:27:16 2018
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:36
 
 
