@@ -1,5 +1,5 @@
-Analysis & Synthesis Status : Successful - Tue Jul 03 18:27:16 2018
-Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Analysis & Synthesis Status : Successful - Tue Jul  3 20:41:47 2018
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Standard Edition
 Revision Name : arduino
 Top-level Entity Name : arduino
 Family : Cyclone IV E
@@ -7,7 +7,7 @@ Total logic elements : 41
     Total combinational functions : 31
     Dedicated logic registers : 41
 Total registers : 41
-Total pins : 14
+Total pins : 18
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

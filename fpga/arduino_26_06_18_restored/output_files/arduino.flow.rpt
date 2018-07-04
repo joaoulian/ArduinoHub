@@ -1,6 +1,6 @@
 Flow report for arduino
-Tue Jul 03 18:27:48 2018
-Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Tue Jul  3 20:42:19 2018
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
 
 
 ---------------------
@@ -37,26 +37,26 @@ refer to the applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------+
-; Flow Summary                                                                     ;
-+------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Jul 03 18:27:48 2018       ;
-; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
-; Revision Name                      ; arduino                                     ;
-; Top-level Entity Name              ; arduino                                     ;
-; Family                             ; Cyclone IV E                                ;
-; Device                             ; EP4CE115F29C7                               ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 41 / 114,480 ( < 1 % )                      ;
-;     Total combinational functions  ; 31 / 114,480 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 41 / 114,480 ( < 1 % )                      ;
-; Total registers                    ; 41                                          ;
-; Total pins                         ; 14 / 529 ( 3 % )                            ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
-+------------------------------------+---------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Flow Summary                                                                         ;
++------------------------------------+-------------------------------------------------+
+; Flow Status                        ; Successful - Tue Jul  3 20:42:19 2018           ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Standard Edition ;
+; Revision Name                      ; arduino                                         ;
+; Top-level Entity Name              ; arduino                                         ;
+; Family                             ; Cyclone IV E                                    ;
+; Device                             ; EP4CE115F29C7                                   ;
+; Timing Models                      ; Final                                           ;
+; Total logic elements               ; 41 / 114,480 ( < 1 % )                          ;
+;     Total combinational functions  ; 31 / 114,480 ( < 1 % )                          ;
+;     Dedicated logic registers      ; 41 / 114,480 ( < 1 % )                          ;
+; Total registers                    ; 41                                              ;
+; Total pins                         ; 18 / 529 ( 3 % )                                ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                           ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                 ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
++------------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/03/2018 18:27:01 ;
+; Start date & time ; 07/03/2018 20:41:29 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; arduino             ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 31032335584291.153065322006716         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 255332401442333.153066128901438        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -94,12 +94,12 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:16     ; 1.0                     ; 4753 MB             ; 00:00:36                           ;
-; Fitter                    ; 00:00:18     ; 1.0                     ; 5435 MB             ; 00:00:24                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 4693 MB             ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4830 MB             ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4664 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:43     ; --                      ; --                  ; 00:01:08                           ;
+; Analysis & Synthesis      ; 00:00:19     ; 1.0                     ; 934 MB              ; 00:00:25                           ;
+; Fitter                    ; 00:00:16     ; 1.0                     ; 1706 MB             ; 00:00:18                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 818 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 900 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1049 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:42     ; --                      ; --                  ; 00:00:50                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -108,11 +108,11 @@ refer to the applicable agreement for further details.
 +---------------------------+------------------+------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-S6O6RJF  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter                    ; DESKTOP-S6O6RJF  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler                 ; DESKTOP-S6O6RJF  ; Windows 10 ; 10.0       ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-S6O6RJF  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer        ; DESKTOP-S6O6RJF  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis      ; D132623          ; Linux Mint ; 18         ; x86_64         ;
+; Fitter                    ; D132623          ; Linux Mint ; 18         ; x86_64         ;
+; Assembler                 ; D132623          ; Linux Mint ; 18         ; x86_64         ;
+; TimeQuest Timing Analyzer ; D132623          ; Linux Mint ; 18         ; x86_64         ;
+; EDA Netlist Writer        ; D132623          ; Linux Mint ; 18         ; x86_64         ;
 +---------------------------+------------------+------------+------------+----------------+
 
 

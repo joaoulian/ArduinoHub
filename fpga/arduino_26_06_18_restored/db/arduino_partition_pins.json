@@ -52,11 +52,27 @@
 					"strict" : false
 				},
 				{
+					"name" : "data[0]",
+					"strict" : false
+				},
+				{
 					"name" : "btnClock",
 					"strict" : false
 				},
 				{
 					"name" : "clock50",
+					"strict" : false
+				},
+				{
+					"name" : "data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "address[1]",
 					"strict" : false
 				}
 			]

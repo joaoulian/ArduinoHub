@@ -3,12 +3,16 @@ module arduino(out,
 					arduinoResponse,
 					btnClock,
 					clock50,
-					responseDisplay);
+					responseDisplay,
+					data,
+					address);
 									 
 	input btnClock;
 	input clock50;
+	input [1:0]data;
+	input [1:0] address;
 	
-	parameter myNumber = 1;
+	parameter myNumber = 2;
 	
 	reg [31:0] reg_end;
 	reg [31:0] reg_data;
@@ -25,8 +29,8 @@ module arduino(out,
 	always @ (posedge clockByTemp) begin
 	
 		if (btnClock) begin
-			reg_end <= 32'd2;
-			reg_data <= 32'd3;
+			reg_end <= {30'd0, address};
+			reg_data <= {30'd0, data};
 		end else begin
 			reg_end <= 32'd0;
 			reg_data <= 32'd0;
